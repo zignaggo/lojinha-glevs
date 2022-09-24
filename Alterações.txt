@@ -1,0 +1,45 @@
+Depois de fazer o app rodar localmente e configurar o app no heroku, além de linkar no github
+
+- Logue no terminal do heroku CLI com o COMANDO
+    > heroku login
+
+- Alterar greatkart/settings 
+
+    import django_heroku
+
+    ALLOWED_HOSTS = ['nome do seu app']
+
+    django_heroku.settings(locals())
+
+
+- Criar o arquivo 'Procfile' (fora de todas as pastas) com o conteúdo:
+    web: gunicorn greatkart.wsgi
+
+Passos para tirar os erros antes de subir pro servidor
+
+    Passo 1: 
+        Alterar requirements.txt
+
+            Django==3.2.13
+            pycodestyle==2.9
+            python-decouple==3.2
+            
+        *Foram essas versões que deram certo kk
+
+        Use o comando 
+        > pip install -r requirements.txt
+
+    Passo 2:
+        Retirar todas as referências /banners/ do css
+
+    Passo 3:
+        Use o comando abaixo para criar as tabelas no heroku
+        > heroku run python manage.py migrate
+   
+
+- Adicione os arquivos alterados e crie o commit
+
+- Mande pro github e depois dê deploy pelo site do heroku
+
+LINK DO VIDEO
+    https://www.youtube.com/watch?v=wsi0xpHUM00
