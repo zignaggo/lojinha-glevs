@@ -29,7 +29,7 @@ SECRET_KEY = '3!d-@k(1b1^4b3x*o4)n$t5u5j)7!2ltb^$%gf7_ca$ln0%i6('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool) # True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['lojinha-glevs']
 
 
 # Application definition
