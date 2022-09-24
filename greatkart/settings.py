@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+from threading import local
+import django_heroku
 from pathlib import Path
 from decouple import config
 
@@ -141,6 +142,8 @@ STATIC_ROOT = BASE_DIR /'static'
 STATICFILES_DIRS = [
     'greatkart/static',
 ]
+
+django_heroku.settings(locals())
 
 # media files configuration
 MEDIA_URL = '/media/'
